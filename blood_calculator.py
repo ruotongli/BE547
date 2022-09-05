@@ -7,6 +7,8 @@ def interface():
         choice = input('Enter choice:')
         if choice =='9':
             return
+        elif choice =='1':
+            HDL_driver()
 
 def input_HDL():
     HDL_input = input('Enter the HDL value:')
@@ -28,4 +30,3 @@ def HDL_driver():
 def output_HDL_result(hdl_value,charac):    
     print('The results for an HDL value of {} is {}'.format(hdl_value,charac)
 
-interface()
