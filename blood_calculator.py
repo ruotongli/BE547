@@ -11,6 +11,8 @@ def interface():
             HDL_driver()
         elif choice =='2':
             LDL_driver()
+        elif choice =='3':
+            Total_driver()
 
 def input_HDL():
     HDL_input = input('Enter the HDL value:')
@@ -53,5 +55,23 @@ def LDL_driver():
 
 def output_LDL_result(ldl_value,charac):    
     print('The results for an LDL value of {} is {}'.format(ldl_value,charac))
+
+def check_total(total):
+    if total <200:
+        return 'Normal'
+    elif 200<= total <=239:
+        return 'Borderline high'
+    else:
+        return 'High'
+
+def Total_driver():
+    hdl_value = input_HDL()
+    ldl_value = input_LDL()
+    total = hdl_value+ldl_value
+    answer = check_total(total)
+    output_total_result(total,answer)
+
+def output_total_result(total,charac):
+    print('The results for total cholesterol of {} is {}'.format(total,charac))
 
 interface()
