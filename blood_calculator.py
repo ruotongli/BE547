@@ -64,14 +64,17 @@ def check_total(total):
     else:
         return 'High'
 
+def input_total():
+    total_input = input('Enter the total cholesterol:')
+    return int(total_input)
+
 def Total_driver():
-    hdl_value = input_HDL()
-    ldl_value = input_LDL()
-    total = hdl_value+ldl_value
+    total = input_total()
     answer = check_total(total)
     output_total_result(total,answer)
 
 def output_total_result(total,charac):
     print('The results for total cholesterol of {} is {}'.format(total,charac))
 
-interface()
+if __name__ == '__main__':
+    interface()
