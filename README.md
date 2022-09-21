@@ -1,5 +1,5 @@
 # Patient Health Database
-Medical Software Design
+Medical Software Design  
 Author: Ruotong Li
 
 ## Purpose
@@ -14,5 +14,10 @@ The database will contains:
 * Age  
 * Blood Type  
 * Test Result  
+    * Test name
+    * Test result
   1. HDL  
   2. LDL  
+
+## Future improvements
+* Add blood type
