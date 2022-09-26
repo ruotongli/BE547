@@ -1,10 +1,31 @@
+class Patient:
+    def __init__(self):
+        self.first_name =''
+        self.last_name = ''
+        self.patient_id = ''
+        self.age = ''
+        self.tests = []
+    
+    def full_name(self):
+        return '{} {}'.format(self.first_name,self.last_name)
+
 def create_patient_entry(patient_name,patient_id,patient_age):
     patient_name = patient_name.split(' ')
-    new_patient = {'First Name': patient_name[0], 'Last Name':patient_name[1],
-    'ID': patient_id, 'Age': patient_age,'Tests': []}
+    new_patient = Patient()
+    new_patient.first_name = patient_name[0]
+    new_patient.last_name = patient_name[1]
+    new_patient.patient_id = patient_id
+    new_patient.age = patient_age
     return new_patient
 
 def main():
+    x = Patient()
+    x.first_name = 'David'
+    x.last_name = 'Ward'
+    print(x.full_name())
+    print(type(x))
+    exit()
+    
     db = {}
     db[1] = create_patient_entry('Ann Ables',1,30)
     db[2] = create_patient_entry('Bob Boyles',2,34)
@@ -22,6 +43,7 @@ def main():
 
     #for patient,room in zip(db,room_list):
         #print('Name = [], Room = []'.format(patient[0],room)
+    
 
 def get_full_name(patient):
     full_name = '{} {}'.format(patient['First Name'],patient['Last Name'])
@@ -43,11 +65,10 @@ def adult_or_minor(patient):
         return 'Minor'
 
 def addition(db,patient_id,test_name,test_value):
-    patient = search(db,1)
+    patient = search(db,patient_id)
     t = (test_name,test_value)
     patient['Tests'].append(t)
-
-
-    
+    return patient
+ 
 if __name__=='__main__':
     main()
